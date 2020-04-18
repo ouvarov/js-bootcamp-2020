@@ -1,0 +1,213 @@
+@mixin media($width) {
+    @media only screen and (max-width: $width+ px) {
+        @content;
+    }
+}
+
+@mixin InputMono-Regular($weight, $size, $color) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+$tablet: 1023px;
+$mobile: 767px;
+$small-mobile: 499px;
+
+@mixin respond-to($media) {
+    @if $media == tablet {
+        @media (max-width: $tablet) {
+            @content;
+        }
+    }
+    @else if $media == mobile {
+        @media (max-width: $mobile) {
+            @content;
+        }
+    }
+    @else if $media == small-mobile {
+        @media (max-width: $small-mobile) {
+            @content;
+        }
+    }
+}
+
+@mixin flex ($type: flex-start, $direction: row) {
+    display: flex;
+    @if $type == flex-start {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    @else if $type == center {
+        justify-content: center;
+        align-items: center;
+    }
+    @else if $type == between-center {
+        justify-content: space-between;
+        align-items: center;
+    }
+    @else if $type == around-center {
+        justify-content: space-around;
+        align-items: center;
+    }
+    @else if $type == around-end {
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+    @else if $type == between-end {
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    @else if $type == end {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    @else if $type == end-center {
+        justify-content: flex-end;
+        align-items: center;
+    }
+    @else if $type == start-center {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    @if $direction == column {
+        flex-direction: column;
+    }
+    @else if $direction == reverse {
+        flex-direction: row-reverse;
+    }
+    @else if $direction == column-reverse {
+        flex-direction: column-reverse;
+    }
+    flex-direction: $direction;
+}
+
+@mixin triangle($direction, $size: 6px, $color: #222) {
+    @if ($direction == 'up') {
+        border: $size solid transparent;
+        border-bottom: $size solid $color;
+    }
+    @else if ($direction == 'down') {
+        border: $size solid transparent;
+        border-top: $size solid $color;
+    }
+    @else if ($direction == 'left') {
+        border: $size solid transparent;
+        border-right: $size solid $color;
+    }
+    @else if ($direction == 'right') {
+        border: $size solid transparent;
+        border-left: $size solid $color;
+    }
+}
+
+@mixin pseudo-element($pseudo-element: after, $content: '', $position: absolute) {
+    &:#{$pseudo-element} {
+        content: $content;
+        position: $position;
+        display: block;
+        @content;
+    }
+    @if ($pseudo-element == all) {
+        &:after,
+        &:before {
+            content: $content;
+            position: $position;
+            display: block;
+            @content;
+        }
+    }
+}
+
+@mixin col($col) {
+    width: (100%/12*$col);
+}
+
+.col-1 {
+    @include col(1);
+}
+
+.col-2 {
+    @include col(2);
+}
+.col-3 {
+    @include col(3);
+}
+
+.col-4 {
+    @include col(4);
+}
+
+.col-5 {
+    @include col(5);
+}
+
+.col-6 {
+    @include col(6);
+}
+
+.col-7 {
+    @include col(7);
+}
+
+.col-8 {
+    @include col(8);
+}
+
+.col-9 {
+    @include col(9);
+}
+
+.col-10 {
+    @include col(10);
+}
+
+.col-11 {
+    @include col(11);
+}
+
+.col-12 {
+    @include col(12);
+}
+
+.container {
+    max-width: 1230px;
+    position: relative;
+    @include media(1023);
+    display: block;
+}
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: table;
+    overflow: hidden;
+}
+textarea {
+    outline: none;
+    resize: none;
+    &:active,
+    &:focus {
+        outline: none;
+        resize: none;
+    }
+}
+button {
+    outline: none;
+    border: none;
+    &:active,
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+\:active,
+:hover,
+:focus {
+    outline: none;
+    outline-offset: 0;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
