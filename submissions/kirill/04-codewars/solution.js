@@ -32,3 +32,8 @@ function getPlanetName(id){
 }
 // END Get Planet Name By ID
 
+// Abbreviate a Two Word Name
+function abbrevName(name){
+    return name.match(/\b\w/g).join('.').toUpperCase();
+}
+// END Abbreviate a Two Word Name
