@@ -62,13 +62,6 @@ function points(games) {
 
 // Task Array plus array
 function arrayPlusArray(arr1, arr2) {
-    let sum1=0,sum2=0;
-    for(let i=0; i<arr1.length;i++){
-        sum1+=parseInt(arr1[i]);
-    }
-    for(let i=0; i<arr2.length;i++){
-        sum2+=parseInt(arr2[i]);
-    }
-    return sum1 + sum2;
+    return arr1.concat(arr2).reduce((a, b) => a + b);
 }
 // END Task Array plus array
