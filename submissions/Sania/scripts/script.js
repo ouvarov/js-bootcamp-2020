@@ -92,7 +92,7 @@ const points = (games) => {
 };
 console.log(points(['1:0', '2:0', '3:0', '4:0', '2:1', '1:3', '1:4', '2:3', '2:4', '3:4']));
 
-//lesson4
+// lesson4
 
 const getPlanetName = (id) => {
     var name;
@@ -135,4 +135,3 @@ const abbrevName = (name) => {
 };
 
 console.log(abbrevName('Sam Harris'));
-
