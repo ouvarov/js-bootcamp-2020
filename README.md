@@ -1,5 +1,10 @@
 # js-bootcamp-2020
 
+## To start
+
+- Fork repo.
+- Run `npm i`.
+
 ## Books
 
 [Eloquent Javascript](https://eloquent-javascript.karmazzin.ru/)
