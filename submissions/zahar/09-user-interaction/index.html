@@ -2,20 +2,27 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Title</title>
+        <title>Lesson 09 homework</title>
         <script src="index.js"></script>
-        <script>
-            function makeMoneyPlease (amount) {
-                console.log('done!');
-            };
-        </script>
     </head>
     <body>
-        <p id="prgrph" onclick="onClick()">Lorum ipsum text</p>
-        <input type="text" onblur="javascript:onBlur();" />
-        <button></button>
-        <script>
-            makeMoneyPlease(55);
-        </script>
+        <div>
+            <h1>Проверка логина</h1>
+            <a onclick="_.runTask()" href="#">Запустить таск</a>
+        </div>
+        <div id="counter-section">
+            <h1>Counter</h1>
+            <button onclick="_.addCounter()">Add counter</button>
+            <!-- <div>
+                <button onclick="_.incrementCounter()">Increment counter</button>
+                <label>0</label>
+            </div> -->
+        </div>
+        <div>
+            <h1>Fibonacchi calculator</h1>
+            <input type="number" id="fib-value" />
+            <button onclick="_.getFibonacchiNumber();">Get number!</button>
+            <p id="fibonacchi-output"></p>
+        </div>
     </body>
 </html>
